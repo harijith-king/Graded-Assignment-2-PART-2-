@@ -20,3 +20,14 @@
 
 3. **The system must protect student records, login credentials, and personal information from unauthorized access.**
    - **Design Principle:** Security
+
+### b. Monolithic vs. Microservices Architecture
+
+| Dimension | Monolithic Architecture | Microservices Architecture |
+|------------|-------------------------|----------------------------|
+| **Independent Deployment** | The entire application is deployed as a single unit. Updating one module requires redeploying the whole application. | Each service can be developed, tested, and deployed independently without affecting other services. |
+| **Fault Isolation** | A failure in one module can affect the entire application because all modules run together. | A failure in one service is isolated, allowing other services to continue operating normally. |
+| **Management Complexity** | Easier to develop and manage because there is a single codebase and deployment process. | More complex to manage due to multiple services, inter-service communication, and distributed monitoring. |
+
+**Recommendation: Microservices Architecture**
+SARS should use microservices to handle 50,000 concurrent users during result publication. This allows the high-traffic Student Portal to scale independently without wasting resources on the Authentication or Admin services. It also ensures fault isolation—so one service failing won't bring down the whole system. While more complex to manage, the benefits to scalability, availability, and independent deployment outweigh the complexity.

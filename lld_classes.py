@@ -1,6 +1,5 @@
 """
-lld_classes.py
-Assignment 2 - Task 2.3a-b
+Task 2.3a-b
 """
 
 from abc import ABC, abstractmethod
